@@ -17,7 +17,6 @@ export const Cast = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(topCast);
   return (
     <ul>
       {topCast.map(({ name, character, profile_path, credit_id }) => (

@@ -56,10 +56,14 @@ export const MovieDetails = () => {
       </section>
       <ul>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link state={location.state} to="cast">
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link state={location.state} to="reviews">
+            Reviews
+          </Link>
         </li>
       </ul>
       <Outlet />
