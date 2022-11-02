@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getDetailsApi } from 'components/Api';
 import { Outlet } from 'react-router-dom';
 import { MovieDetailsInfo } from 'components/MovieDetails/MovieDetailsInfo';
+import { OptionalInfo } from 'components/MovieDetails/OptionalInfo';
 
 export const MovieDetails = () => {
   const { moviesId } = useParams();
@@ -43,18 +43,7 @@ export const MovieDetails = () => {
         pathname={pathname}
         search={search}
       />
-      <ul>
-        <li>
-          <Link state={location.state} to="cast">
-            Cast
-          </Link>
-        </li>
-        <li>
-          <Link state={location.state} to="reviews">
-            Reviews
-          </Link>
-        </li>
-      </ul>
+      <OptionalInfo locationState={location.state} />
       <Outlet />
     </>
   );
