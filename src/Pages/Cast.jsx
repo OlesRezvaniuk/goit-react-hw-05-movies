@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getCastApi } from 'components/Api/Api';
 import { CastItem } from 'components/Cast/CastItem';
 
-export const Cast = () => {
+const Cast = () => {
   const { moviesId } = useParams();
   const [topCast, setTopCast] = useState([]);
 
@@ -20,3 +20,5 @@ export const Cast = () => {
 
   return <CastItem topCast={topCast} />;
 };
+
+export default Cast;

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useState } from 'react';
@@ -9,7 +8,7 @@ import { Outlet } from 'react-router-dom';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { getSearchMoviesApi } from 'components/Api/Api';
 
-export const Movies = () => {
+const Movies = () => {
   const location = useLocation();
   const [params, setParams] = useSearchParams();
   const namePar = params.get('query');
@@ -54,3 +53,5 @@ export const Movies = () => {
     </div>
   );
 };
+
+export default Movies;

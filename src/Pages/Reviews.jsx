@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getReviewsApi } from 'components/Api/Api';
 import { ReviewsItem } from 'components/Reviews/ReviewsItem';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { moviesId } = useParams();
   const [reviews, setReviews] = useState([]);
 
@@ -23,3 +23,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;

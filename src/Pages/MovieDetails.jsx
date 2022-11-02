@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 import { MovieDetailsInfo } from 'components/MovieDetails/MovieDetailsInfo';
 import { OptionalInfo } from 'components/MovieDetails/OptionalInfo';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { moviesId } = useParams();
 
   const location = useLocation();
@@ -48,3 +48,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;
