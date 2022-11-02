@@ -52,3 +52,15 @@ export const Logo = styled.img`
     width: 40px;
   }
 `;
+
+export const Favorites = styled.div`
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+`;

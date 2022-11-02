@@ -6,6 +6,7 @@ import { Layout } from './Layout/Layout';
 import { MovieDetails } from 'Pages/MovieDetails';
 import { Cast } from 'Pages/Cast';
 import { Reviews } from 'Pages/Reviews';
+import { Favorites } from './Layout/Layout.styled';
 
 export const App = () => {
   return (
@@ -15,7 +16,7 @@ export const App = () => {
         <Route path="/movies" element={<Movies />} />
         <Route
           path="/favorites"
-          element={<>Sorry, this page under development</>}
+          element={<Favorites>Sorry, this page under development</Favorites>}
         />
         <Route path="movies/:moviesId" element={<MovieDetails />}>
           <Route path="cast" element={<Cast />} />

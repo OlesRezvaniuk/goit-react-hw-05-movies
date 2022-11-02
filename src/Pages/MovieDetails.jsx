@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getDetailsApi } from 'components/Api';
+import { getDetailsApi } from 'components/Api/Api';
 import { Outlet } from 'react-router-dom';
 import { MovieDetailsInfo } from 'components/MovieDetails/MovieDetailsInfo';
 import { OptionalInfo } from 'components/MovieDetails/OptionalInfo';

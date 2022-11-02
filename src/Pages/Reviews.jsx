@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getReviewsApi } from 'components/Api';
+import { getReviewsApi } from 'components/Api/Api';
+import { ReviewsItem } from 'components/Reviews/ReviewsItem';
 
 export const Reviews = () => {
   const { moviesId } = useParams();
@@ -16,17 +17,9 @@ export const Reviews = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(reviews);
-
   return (
-    <ul>
-      {reviews.length === 0 && <p>We don't have any reviews for this movie</p>}
-      {reviews.map(({ id, author, content }) => (
-        <li key={id}>
-          <p>Author: {author}</p>
-          <p>{content}</p>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ReviewsItem reviews={reviews} />
+    </>
   );
 };

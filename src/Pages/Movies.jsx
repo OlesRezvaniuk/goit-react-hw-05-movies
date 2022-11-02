@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
-
+import { SearchForm } from 'components/SearchForm/SearchForm';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
 import { Outlet } from 'react-router-dom';
 
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { getSearchMoviesApi } from 'components/Api';
+import { getSearchMoviesApi } from 'components/Api/Api';
 
 export const Movies = () => {
   const location = useLocation();
@@ -43,26 +44,12 @@ export const Movies = () => {
 
   return (
     <div>
-      <form onSubmit={heandleSearch}>
-        <input value={name} onChange={onInputChange} />
-        <button type="submit">Search</button>
-      </form>
-      <section>
-        <ul>
-          {moviesArr.map(movie => (
-            <li key={movie.id}>
-              <Link to={`${movie.id}`} state={{ from: location }}>
-                {movie.original_title}{' '}
-                <img
-                  style={{ width: '150px' }}
-                  alt={movie.title}
-                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                ></img>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <SearchForm
+        heandleSearch={heandleSearch}
+        name={name}
+        onInputChange={onInputChange}
+      />
+      <MoviesList moviesArr={moviesArr} location={location} />
       <Outlet />
     </div>
   );
