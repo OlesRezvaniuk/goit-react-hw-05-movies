@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getDetailsApi } from 'components/Api';
 import { Outlet } from 'react-router-dom';
+import { MovieDetailsInfo } from 'components/MovieDetails/MovieDetailsInfo';
 
 export const MovieDetails = () => {
   const { moviesId } = useParams();
@@ -25,8 +26,6 @@ export const MovieDetails = () => {
     setYear(year);
   };
 
-  console.log(location);
-
   useEffect(() => {
     onArrayItems();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,26 +33,16 @@ export const MovieDetails = () => {
   const score = Math.round(details.vote_average * 10);
   return (
     <>
-      <Link to={pathname + search}>To home</Link>
-      <section style={{ display: 'flex' }}>
-        <img
-          style={{ width: '290px' }}
-          src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`}
-          alt=""
-        ></img>
-        <div>
-          <h1>
-            {details.original_title}({year})
-          </h1>
-          <p>User Score: {score}%</p>
-          <h2>Overview</h2>
-          <p>{details.overview}</p>
-          <h3>Genres</h3>
-          {genres.map(genre => (
-            <p key={genre.name}>{genre.name}</p>
-          ))}
-        </div>
-      </section>
+      <MovieDetailsInfo
+        poster_path={details.poster_path}
+        original_title={details.original_title}
+        overview={details.overview}
+        genres={genres}
+        year={year}
+        score={score}
+        pathname={pathname}
+        search={search}
+      />
       <ul>
         <li>
           <Link state={location.state} to="cast">

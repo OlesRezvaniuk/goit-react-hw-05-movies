@@ -1,18 +1,30 @@
 import { Link } from 'react-router-dom';
-import { Section } from './TrendingsMovies.styled';
+import {
+  Section,
+  List,
+  Poster,
+  Item,
+  LinkStyled,
+  Title,
+} from './TrendingsMovies.styled';
 export const TrendingsMovies = ({ trendingMovies, location }) => {
   return (
     <Section>
-      <h1>Trending Today</h1>
-      <ul>
-        {trendingMovies.map(({ id, original_title }) => (
-          <li key={id}>
-            <Link key={id} to={`movies/${id}`} state={{ from: location }}>
-              {original_title}
-            </Link>
-          </li>
+      <Title>Trending Today</Title>
+      <List>
+        {trendingMovies.map(({ id, original_title, poster_path }) => (
+          <Item key={id}>
+            <LinkStyled key={id} to={`movies/${id}`} state={{ from: location }}>
+              <span style={{ padding: '10px' }}> {original_title}</span>
+
+              <Poster
+                alt={original_title}
+                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              ></Poster>
+            </LinkStyled>
+          </Item>
         ))}
-      </ul>
+      </List>
     </Section>
   );
 };

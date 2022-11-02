@@ -1,6 +1,5 @@
-import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import { Section, List } from './Layout.styled';
+import { Section, Box, NavLinkStyled, List, Logo } from './Layout.styled';
 
 export const Layout = () => {
   const navBtnArr = [
@@ -12,15 +11,22 @@ export const Layout = () => {
   return (
     <>
       <Section>
-        <List>
-          {navBtnArr.map(({ href, text }) => (
-            <li key={href}>
-              <NavLink end to={href} key={text}>
-                {text}
-              </NavLink>
-            </li>
-          ))}
-        </List>
+        <Box>
+          <Logo
+            alt="logo"
+            width="30px"
+            src="https://www.svgrepo.com/show/34896/movie.svg"
+          />
+          <List>
+            {navBtnArr.map(({ href, text }) => (
+              <li key={href}>
+                <NavLinkStyled to={href} key={text}>
+                  {text}
+                </NavLinkStyled>
+              </li>
+            ))}
+          </List>
+        </Box>
       </Section>
       <Outlet />
     </>
