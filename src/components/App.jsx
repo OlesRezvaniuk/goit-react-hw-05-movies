@@ -2,7 +2,7 @@ import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Home } from 'Pages/Home';
 import { Movies } from 'Pages/Movies';
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 import { MovieDetails } from 'Pages/MovieDetails';
 import { Cast } from 'Pages/Cast';
 import { Reviews } from 'Pages/Reviews';
@@ -13,6 +13,7 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/favorites" element={<>Favorites </>} />
         <Route path="movies/:moviesId" element={<MovieDetails />}>
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />

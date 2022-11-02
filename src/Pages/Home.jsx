@@ -1,8 +1,8 @@
 // import { Outlet } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getTrandingsApi } from 'components/Api';
 import { useLocation } from 'react-router-dom';
+import { TrendingsMovies } from 'components/TrendingsMovies/TrendingsMovies';
 
 export const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -13,17 +13,8 @@ export const Home = () => {
   }, []);
 
   return (
-    <section>
-      <h1>Trending Today</h1>
-      <ul>
-        {trendingMovies.map(({ id, original_title }) => (
-          <li key={id}>
-            <Link key={id} to={`movies/${id}`} state={{ from: location }}>
-              {original_title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <TrendingsMovies trendingMovies={trendingMovies} location={location} />
+    </>
   );
 };
