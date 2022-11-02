@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   MoviesListStyled,
   MoviesListItem,
@@ -25,4 +26,16 @@ export const MoviesList = ({ moviesArr, location }) => {
       </MoviesListStyled>
     </section>
   );
+};
+
+MoviesList.propTypes = {
+  moviesArr: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      original_title: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      poster_path: PropTypes.string.isRequired,
+    })
+  ),
+  location: PropTypes.object.isRequired,
 };

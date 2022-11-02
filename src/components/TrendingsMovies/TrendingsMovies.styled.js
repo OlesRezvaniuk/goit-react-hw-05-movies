@@ -17,7 +17,7 @@ export const Section = styled.section`
 
 export const List = styled.ul`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   padding: 0;
   margin: 15px;
   gap: 15px;

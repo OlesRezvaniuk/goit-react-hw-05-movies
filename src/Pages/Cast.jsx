@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getCastApi } from 'components/Api/Api';
-import { CastItem } from 'components/Cast/CastItem';
+import { CastItem } from 'components/CastItem/CastItem';
 
 const Cast = () => {
   const { moviesId } = useParams();

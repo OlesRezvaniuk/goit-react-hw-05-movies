@@ -4,7 +4,7 @@ import { getTrandingsApi } from 'components/Api/Api';
 import { useLocation } from 'react-router-dom';
 import { TrendingsMovies } from 'components/TrendingsMovies/TrendingsMovies';
 
-export const Home = () => {
+const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const location = useLocation();
 
@@ -18,3 +18,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

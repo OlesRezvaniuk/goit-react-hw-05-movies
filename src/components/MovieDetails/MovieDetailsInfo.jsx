@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   BtnBack,
   Box,
@@ -47,4 +48,19 @@ export const MovieDetailsInfo = ({
       </Section>
     </>
   );
+};
+
+MovieDetailsInfo.propTypes = {
+  poster_path: PropTypes.any,
+  original_title: PropTypes.any,
+  overview: PropTypes.any,
+  genres: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    })
+  ),
+  year: PropTypes.any,
+  score: PropTypes.number.isRequired,
+  pathname: PropTypes.string.isRequired,
+  search: PropTypes.string.isRequired,
 };

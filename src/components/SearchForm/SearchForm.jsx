@@ -1,4 +1,5 @@
 import { SForm, Input, SearchBtn } from './SearchForm.styled';
+import PropTypes from 'prop-types';
 
 export const SearchForm = ({ heandleSearch, name, onInputChange }) => {
   return (
@@ -13,4 +14,10 @@ export const SearchForm = ({ heandleSearch, name, onInputChange }) => {
       </SearchBtn>
     </SForm>
   );
+};
+
+SearchForm.propTypes = {
+  heandleSearch: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  onInputChange: PropTypes.func.isRequired,
 };

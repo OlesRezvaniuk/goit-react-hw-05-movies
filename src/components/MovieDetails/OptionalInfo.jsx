@@ -1,4 +1,5 @@
 import { OptionalInfoList, OptionalInfoLink } from './MovieDetails.styled';
+import PropTypes from 'prop-types';
 
 export const OptionalInfo = ({ locationState }) => {
   return (
@@ -15,4 +16,8 @@ export const OptionalInfo = ({ locationState }) => {
       </li>
     </OptionalInfoList>
   );
+};
+
+OptionalInfo.propTypes = {
+  locationState: PropTypes.object.isRequired,
 };

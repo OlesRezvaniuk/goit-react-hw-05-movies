@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   Section,
   List,
@@ -26,4 +28,14 @@ export const TrendingsMovies = ({ trendingMovies, location }) => {
       </List>
     </Section>
   );
+};
+
+TrendingsMovies.propTypes = {
+  trendingMovies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      original_title: PropTypes.string.isRequired,
+    })
+  ),
+  location: PropTypes.object.isRequired,
 };

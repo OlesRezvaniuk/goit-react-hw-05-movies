@@ -1,4 +1,5 @@
 import { CastList, ActorName, CharacterName, CastActor } from './Casts.styled';
+import PropTypes from 'prop-types';
 
 export const CastItem = ({ topCast }) => {
   return (
@@ -16,4 +17,15 @@ export const CastItem = ({ topCast }) => {
       ))}
     </CastList>
   );
+};
+
+CastItem.propTypes = {
+  topCast: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      character: PropTypes.string.isRequired,
+      profile_path: PropTypes.any,
+      credit_id: PropTypes.any,
+    })
+  ),
 };
