@@ -25,6 +25,11 @@ export const MoviesListItem = styled.li`
   border-radius: 4px;
   -webkit-transition: 250ms;
   transition: 250ms;
+  &:hover,
+  &:focus {
+    scale: 1.01;
+    box-shadow: 0px 0px 8px black;
+  }
 `;
 
 export const MovieListLink = styled(Link)`
