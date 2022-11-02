@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getCastApi } from 'components/Api';
-import { CastList } from 'components/Cast/Casts';
+import { Casts } from 'components/Cast/Casts';
 
 export const Cast = () => {
   const { moviesId } = useParams();
@@ -18,5 +18,5 @@ export const Cast = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <CastList topCast={topCast} />;
+  return <Casts topCast={topCast} />;
 };
