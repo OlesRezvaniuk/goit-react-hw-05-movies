@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { OptionalInfoList, OptionalInfoLink } from './MovieDetails.styled';
 
 export const OptionalInfo = ({ locationState }) => {
