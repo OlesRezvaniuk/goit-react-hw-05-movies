@@ -20,7 +20,7 @@ export const Layout = () => {
           <List>
             {navBtnArr.map(({ href, text }) => (
               <li key={href}>
-                <NavLinkStyled to={href} key={text}>
+                <NavLinkStyled end to={href} key={text}>
                   {text}
                 </NavLinkStyled>
               </li>
